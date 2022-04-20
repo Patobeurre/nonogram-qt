@@ -9,6 +9,8 @@
 
 /**
  * Implementation of flow layout
+ *
+ * @author Patobeur
  */
 class FlowLayout : public QLayout
 {

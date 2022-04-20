@@ -12,6 +12,8 @@
  *
  * Each clue number on the puzzle's side is made clickable.
  * It allows the user to cross any number.
+ *
+ * @author Patobeur
  */
 class ClueNumberButton : public QPushButton
 {

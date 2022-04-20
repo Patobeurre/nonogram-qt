@@ -15,6 +15,8 @@
  *
  * Each puzzle square is made clickable. They can be marked as
  * empty, fill or dot.
+ *
+ * @author Patobeur
  */
 class PushButton : public QPushButton {
     Q_OBJECT

@@ -19,6 +19,8 @@
  *
  * These values are used in functions that need to manipulate files.
  * They can be seen as exception types.
+ *
+ * @author Patobeur
  */
 enum errors {
     /// Used if file already exists
