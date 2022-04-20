@@ -1,30 +1,47 @@
 #ifndef PUSHBUTTON_H
 #define PUSHBUTTON_H
+
 #include <QPushButton>
 #include <QDrag>
 #include <QDragEnterEvent>
 #include <QMouseEvent>
 #include <QMimeData>
 
-#define SIZE 20
+#define SIZE 20     ///< The fixed size of the button.
 
+
+/**
+ * Implementation of a customized 'QPushButton' for puzzle squares.
+ *
+ * Each puzzle square is made clickable. They can be marked as
+ * empty, fill or dot.
+ */
 class PushButton : public QPushButton {
-	Q_OBJECT
+    Q_OBJECT
 
  private:
-	int *button;
-	bool *first;
-	bool processed;
+    /// The button reference
+    int *button;
+    /// Is true if this is the first button pressed on drag action.
+    bool *first;
+    /// Is true when the drag action is initiated.
+    bool processed;
 
  public:
-	PushButton(int *b, bool *f, QWidget *parent = 0);
-	
+    /// Constructor
+    PushButton(int *b, bool *f, QWidget *parent = 0);
+
  protected:
-	void dragEnterEvent(QDragEnterEvent *e);
-	void mousePressEvent(QMouseEvent *e);
-	
+    /// Event handler for mouse drag
+    void dragEnterEvent(QDragEnterEvent *e);
+    /// Event handler for button clicked
+    void mousePressEvent(QMouseEvent *e);
+
  signals:
-	void solid();
-	void dot();
+    /// Signal emitted to set the square to fill
+    void solid();
+    /// Signal emitted to set the square to dot
+    void dot();
 };
 #endif
+
